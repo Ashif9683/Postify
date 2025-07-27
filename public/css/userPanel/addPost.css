@@ -1,0 +1,88 @@
+body {
+    background-color: #f8f8ff;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.form-wrapper {
+    width: 90%;
+    margin: auto;
+    padding: 1vw;
+}
+
+.form-group {
+    margin-bottom: 2vw;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5vw;
+    font-size: 1.2vw;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1vw;
+    font-size: 1vw;
+    border: none;
+    border-radius: 0.5vw;
+    background-color: #f2f2f2;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 250px;
+}
+
+.image-upload-box {
+    width: 30%;
+    height: 140px;
+    background-color: #f2f2f2;
+    border: 2px dashed #bbb;
+    border-radius: 0.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.image-upload-box input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-upload-box p {
+    font-size: 1.2vw;
+    color: #666;
+}
+
+.image-upload-box span {
+    display: block;
+    font-size: 1vw;
+    color: #999;
+}
+
+.submit-btn {
+    background-color: rgb(24, 24, 244);
+    color: white;
+    padding: 0.8vw 2vw;
+    font-size: 1.2vw;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+.error {
+    color: red;
+    font-size: 1.2vw;
+}
+

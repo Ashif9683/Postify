@@ -1,0 +1,75 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #ffe0e0;
+    color: #d8000c;
+    padding: 0.4vw;
+    width: 34vw;
+    margin: 1vw auto;
+    border-radius: 0.5vw;
+    font-size: 1vw;
+    text-align: center;
+}
+.logo-container {
+    margin-top: 3vw;
+}
+
+.logo-container img {
+    width: 20vw;
+}
+
+.login {
+    margin-top: 6vw;
+    padding: 0 5vw;
+}
+
+.login h1 {
+    font-size: 2vw;
+}
+
+.login p {
+    font-size: 1vw;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 1.5vw;
+}
+
+input[type="email"],
+input[type="password"],
+button {
+    width: 35vw;
+    padding: 1vw;
+    font-size: 1.3vw;
+    border-radius: 0.5vw;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input[type="email"],
+input[type="password"] {
+    background-color: rgb(209, 209, 209);
+}
+
+button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#createAccount {
+    font-size: 1vw;
+}
