@@ -55,7 +55,6 @@
                 @enderror
             </div>
 
-            <!-- Post Content -->
             <div class="form-group">
                 <label for="postContent">Post Content</label>
                 <textarea name="content" id="postContent" placeholder="Type or paste your content here!"
@@ -65,7 +64,6 @@
                 @enderror
             </div>
 
-            <!-- Submit Button -->
             <div class="form-group">
                 <button type="submit" class="submit-btn">{{ isset($post) ? 'Update Post' : 'Save Post' }}</button>
             </div>

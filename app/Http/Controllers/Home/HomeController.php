@@ -18,7 +18,6 @@ class HomeController extends Controller
     public function post($id)
     {
         $post = Post::with('user')->findOrFail($id);
-        logger("DAta".print_r($post,true));
         return view('homePage.post', compact('post')); // Use correct view path and variable
     }
 }

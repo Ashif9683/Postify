@@ -24,10 +24,6 @@ class AdminController extends Controller
 
 
         $admin = Admin::where('email', $request->email)->first();
-        if ($admin) {
-            logger('Admin found: ' . $admin->email);
-            logger('Password matches: ' . (Hash::check($request->password, $admin->password) ? 'YES' : 'NO'));
-        }
 
         if ($admin && Hash::check($request->password, $admin->password)) {
             session(['admin_logged_in' => true, 'admin_id' => $admin->id]);

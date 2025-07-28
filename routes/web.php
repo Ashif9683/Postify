@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\AdminController;
 use App\Http\Controllers\User\UserController;
 
-// Default home page
+// Home page
 Route::get('/',[HomeController::class,'home']);
 Route::get('/post/{id}',[HomeController::class,'post']);
 

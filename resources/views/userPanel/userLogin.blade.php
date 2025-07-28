@@ -12,7 +12,7 @@
 <body>
 
     <div class="logo-container">
-        <a href="/"> <img src="{{ asset('storage/images/PostifyLogo.png') }}" alt="Logo"></a>
+        <a href="/"><img src="{{ asset('images/PostifyLogo.png') }}" alt="Logo"></a>
     </div>
 
     <div class="login">

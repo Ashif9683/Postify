@@ -8,7 +8,6 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 
 class UserController extends Controller
@@ -80,17 +79,6 @@ class UserController extends Controller
             ]
         );
 
-
-        if (!$request->hasFile('image')) {
-            Log::warning('Image not found in request');
-        } else {
-            Log::info('Image file info:', [
-                'originalName' => $request->file('image')->getClientOriginalName(),
-                'mimeType' => $request->file('image')->getMimeType(),
-                'size' => $request->file('image')->getSize()
-            ]);
-        }
-
         $imagePath = $request->file('image')->store('post_images', 'public');
 
         $post = Post::create([
@@ -128,8 +116,6 @@ class UserController extends Controller
 
     public function updatePost(Request $request, $id)
     {
-        Log::info("UpdatePost called for post ID: {$id}");
-
         $request->validate(
             [
                 'postTitle' => 'required|string|max:255',
@@ -139,22 +125,15 @@ class UserController extends Controller
         );
 
         $post = Post::where('id', $id)->where('user_id', auth()->id())->firstOrFail();
-        Log::info("Post found for update", ['title' => $post->title]);
 
         $post->title = $request->postTitle;
         $post->content = $request->content;
 
         if ($request->hasFile('image')) {
-            Log::info('New image uploaded:', [
-                'originalName' => $request->file('image')->getClientOriginalName()
-            ]);
-
             $imagePath = $request->file('image')->store('post_images', 'public');
-            Log::info('New image stored at: ' . $imagePath);
-
             $post->image = $imagePath;
         } else {
-            Log::info('No new image uploaded');
+            logger('No new image uploaded');
         }
 
         $post->save();

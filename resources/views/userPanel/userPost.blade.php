@@ -19,7 +19,6 @@
         </div>
     @endif
 
-    <!-- Add content here -->
     <div class="content">
         <h1>My Posts</h1>
         <a href="{{ route('user.post.create') }}" id="addPost">Add Post</a>
