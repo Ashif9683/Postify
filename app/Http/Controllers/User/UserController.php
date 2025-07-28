@@ -28,7 +28,6 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -91,7 +90,6 @@ class UserController extends Controller
         return redirect()->route('user.mypost')->with('success', 'Post created successfully!');
     }
 
-
     public function myPosts()
     {
 
@@ -111,7 +109,6 @@ class UserController extends Controller
     {
         Post::where('id', $id)->where('user_id', auth()->id())->delete();
         return redirect()->route('user.mypost')->with('success', 'Post delete successfully!');
-
     }
 
     public function updatePost(Request $request, $id)
@@ -140,7 +137,4 @@ class UserController extends Controller
 
         return redirect()->route('user.mypost')->with('success', 'Post updated successfully!');
     }
-
-
-
 }

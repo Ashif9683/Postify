@@ -32,5 +32,4 @@ class Post extends Model
         return $this->created_at->format('F d, Y'); 
     }
 
-
 }
